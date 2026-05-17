@@ -16,11 +16,6 @@ struct CNDiscount {static constexpr double factor{0.9};};
 
 using Discount = std::variant<USDiscount, RUDiscount, CNDiscount>;
 
-template<class... Ts>
-struct overloaded : Ts... {
-    using Ts::operator()...;
-};
-
 //User.h
 struct User
 {
