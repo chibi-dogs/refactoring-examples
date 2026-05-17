@@ -2,30 +2,33 @@
 #include <variant>
 #include <vector>
 
-
+//Product.h
 struct Product
 {
     double quantity;
     double price;
 };
 
+//Discounts.h
 struct USDiscount {static constexpr double factor{0.85};};
 struct RUDiscount {static constexpr double factor{0.75};};
 struct CNDiscount {static constexpr double factor{0.9};};
 
 using Discount = std::variant<USDiscount, RUDiscount, CNDiscount>;
 
-
-struct User
-{
-    Discount discount;
-};
-
 template<class... Ts>
 struct overloaded : Ts... {
     using Ts::operator()...;
 };
 
+//User.h
+struct User
+{
+    Discount discount;
+};
+
+
+// Order.h and Order.cpp if separating header from source
 class Order
 {
 public:
