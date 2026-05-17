@@ -10,5 +10,5 @@ std::string getOutstanding() { return "42.00"; }
 
 void printDetails(std::string_view name) {
     printBanner();
-    std::println("{}", formatDetails(name, getOutstanding()));
+    std::print("{}", formatDetails(name, getOutstanding()));
 }
