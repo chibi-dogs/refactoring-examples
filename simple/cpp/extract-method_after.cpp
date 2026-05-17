@@ -1,6 +1,6 @@
 #include <print>
-void printBanner(){}
 
+void printBanner(){}
 std::string getOutstanding() { return "42.00"; }
 
 [[nodiscard]] std::string formatDetails(std::string_view name, std::string_view outstanding)

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <format>
+
 void printBanner(){}
 std::string getOutstanding() { return "42.00"; }
 
