@@ -1,0 +1,3 @@
+add_executable(main main.cpp)
+set_target_properties(main PROPERTIES CXX_SCAN_FOR_MODULES OFF)
+add_subdirectory(replace_conditional_with_polymorphism)

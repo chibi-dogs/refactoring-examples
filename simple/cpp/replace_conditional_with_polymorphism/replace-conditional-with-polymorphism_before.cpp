@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <__utility/unreachable.h>
 
-namespace bird
+namespace bird::before
 {
     enum class Type
     {
@@ -40,7 +40,7 @@ namespace bird
 
             case Type::NORWEGIAN_BLUE:
                 {
-                        return config_.isNailed ? 0 : GetBaseSpeed();
+                        return config_.isNailed ? 0 : config_.isNailed * config_.voltage;
                 }
 
             default:
@@ -51,9 +51,5 @@ namespace bird
     private:
         Type type_;
         Config config_;
-        [[nodiscard]] double GetBaseSpeed() const
-        {
-            return config_.isNailed * config_.voltage;
-        }
     };
 }
